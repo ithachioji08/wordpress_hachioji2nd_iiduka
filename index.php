@@ -29,22 +29,11 @@
                 <div class="information">
                     <h2>INFORMATION</h2>
                     <dl>
-                        <dt>2020-08-01</dt>
+                    <dt><?php the_time('Y-m-d'); ?></dt>
                         <dd>
-                        <span class="tab tag_gyoumu">お知らせ</span>
-                        <a href="<?php echo home_url(); ?>/single.html">夏季休暇のお知らせを掲載しました</a></dd>
-                        <dt>2020-07-29</dt>
-                        <dd>
-    					<span class="tab tag_release">プレスリリース</span>
-                        <a href="<?php echo home_url(); ?>/sample.html">新サービスのお知らせを掲載しました</a></dd>
-                        <dt>2020-07-23</dt>
-                        <dd>
-    					<span class="tab tag_gyoumu">お知らせ</span>
-                        <a href="<?php echo home_url(); ?>/sample.html">雑誌掲載情報を掲載しました</a></dd>
-                        <dt>2020-07-20</dt>
-                        <dd>
-                        <span class="tab tag_gyoumu">お知らせ</span>
-                        <a href="<?php echo home_url(); ?>/sample.html">雑誌掲載情報を掲載しました</a></dd>
+                            <span class="tab tag_<?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->slug; } ?>"> <?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->cat_name; } ?> </span>
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>を掲載しました。
+                        </dd>
                     </dl>
                 </div>
 
