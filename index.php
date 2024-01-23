@@ -29,11 +29,14 @@
                 <div class="information">
                     <h2>INFORMATION</h2>
                     <dl>
-                    <dt><?php the_time('Y-m-d'); ?></dt>
+					<?php $infoPosts = get_posts('numberposts=4&category=1'); foreach($infoPosts as $post): ?> 
+						<dt><?php the_time('Y-m-d')?></dt>
                         <dd>
-                            <span class="tab tag_<?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->slug; } ?>"> <?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->cat_name; } ?> </span>
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>を掲載しました。
-                        </dd>
+                        	<span class="tab tag_<?php $cat = get_the_category(); $cat=$cat[0];{echo $cat->slug;}?>">
+							<?php $cat=get_the_category();$cat=$cat[0];{echo $cat->cat_name;} ?></span>
+                        	<a href="<?php the_permalink(); ?>"><?php the_title();?>を掲載しました</a>
+						</dd>
+					<?php endforeach; ?>
                     </dl>
                 </div>
 
@@ -44,7 +47,7 @@
                         <dt>2020-08-04</dt>
                         <dd>
                         <div class="b_img">
-    	                    <img src="<?php echo get_template_directory_uri(); ?>/images/sample.jpg">
+							<?php the_post_thumbnail('thumbside'); ?>
                         </div>
                          <div class="b_right">
                         <a href="<?php echo home_url(); ?>/sample.html">社長通信</a>
