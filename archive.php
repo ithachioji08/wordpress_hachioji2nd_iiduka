@@ -27,8 +27,8 @@
 						<div class="b_img"><img src="images/sample.jpg"></div>
 						<div class="b_right"><a href="sample.html">セミナー開催報告</a></div>
 					</dd>
+					
 				</dl>
-				<?php wp_pagenavi(); ?>
 			</div>
 			<div class="information">
 				<h2>INFORMATION</h2>
@@ -37,10 +37,11 @@
 					<dd>
 					<span class="tab tag_<?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->slug; } ?>"> <?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->cat_name; } ?> </span>
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>を掲載しました。</dd>
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?> 中身が入る   <?php endwhile; endif; ?>
+					<?php if (have_posts()) : while (have_posts()) : the_post(); ?> 中身が入る   <?php endwhile; endif; ?>	
 				</dl>
 				<?php wp_pagenavi(); ?>
 			</div>
+			
 		</div>
 		<?php get_sidebar(); ?>
 	</div>

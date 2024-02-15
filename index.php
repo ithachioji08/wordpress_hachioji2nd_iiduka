@@ -24,23 +24,23 @@
 				<p>会社情報をご紹介します。</p>
 				<p class="top-navDetail"><a href="<?php echo home_url(); ?>/company.html">MORE</a></p>
 			</div>
-			<?php wp_pagenavi(); ?>
 		</div>
 		<div id="cont_left">
 			<div class="information">
 				<h2>INFORMATION</h2>
 				<dl>
-					<?php $infoPosts = get_posts('numberposts=4&category=1'); foreach($infoPosts as $post): ?> 
+					<?php $infoPosts = get_posts('numberposts=5&category=1'); foreach($infoPosts as $post): ?> 
 						<dt><?php the_time('Y-m-d')?></dt>
 						<dd>
 							<span class="tab tag_<?php $cat = get_the_category(); $cat=$cat[0];{echo $cat->slug;}?>">
 							<?php $cat=get_the_category();$cat=$cat[0];{echo $cat->cat_name;} ?></span>
 							<a href="<?php the_permalink(); ?>"><?php the_title();?>を掲載しました</a>
 						</dd>
-					<?php endforeach; ?>
+					<?php endforeach; ?>	
+					<?php wp_pagenavi(); ?>
 				</dl>
+				
 			</div>
-
 			<div class="information">
 				<h2>BLOG</h2>
 				<dl>
@@ -73,8 +73,8 @@
 							<a href="<?php echo home_url(); ?>/sample.html">セミナー開催報告</a>
 						</div>
 					</dd>
+					
 				</dl>
-				
 			</div>
 		</div>      
 		<?php get_sidebar(); ?> 
