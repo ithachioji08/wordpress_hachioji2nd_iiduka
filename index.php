@@ -44,19 +44,19 @@
 						if ($the_query->have_posts()) :
 							while ($the_query->have_posts()) : $the_query->the_post();
 					?> 
-						<dt><?php the_time('Y-m-d')?></dt>
-						<dd>
-							<span class="tab tag_<?php $cat = get_the_category(); $cat=$cat[0];{echo $cat->slug;}?>">
-							<?php $cat=get_the_category();$cat=$cat[0];{echo $cat->cat_name;} ?></span>
-							<a href="<?php the_permalink(); ?>"><?php the_title();?>を掲載しました</a>
-						</dd>
+								<dt><?php the_time('Y-m-d')?></dt>
+								<dd>
+									<span class="tab tag_<?php $cat = get_the_category(); $cat=$cat[0];{echo $cat->slug;}?>">
+									<?php $cat=get_the_category();$cat=$cat[0];{echo $cat->cat_name;} ?></span>
+									<a href="<?php the_permalink(); ?>"><?php the_title();?>を掲載しました</a>
+								</dd>
 					<?php //endforeach; 
 							endwhile;
 						else:
 							echo '<div><p>ありません。</p></div>';
 						endif;
+						wp_pagenavi();
 					?>	
-					<?php wp_pagenavi(); ?>
 				</dl>
 				
 			</div>
