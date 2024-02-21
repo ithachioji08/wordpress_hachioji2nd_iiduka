@@ -39,7 +39,8 @@
 							'paged' => $paged,
 							'posts_per_page' => 5, // 表示件数
 							'orderby'     => 'date',
-							'order' => 'DESC'
+							'order' => 'DESC',
+							'cat' => 1
 						) );
 						if ($the_query->have_posts()) :
 							while ($the_query->have_posts()) : $the_query->the_post();
@@ -50,8 +51,8 @@
 									<?php $cat=get_the_category();$cat=$cat[0];{echo $cat->cat_name;} ?></span>
 									<a href="<?php the_permalink(); ?>"><?php the_title();?>を掲載しました</a>
 								</dd>
-					<?php //endforeach; 
-							endwhile;
+					<?php //endfor
+							endwhile; 
 						else:
 							echo '<div><p>ありません。</p></div>';
 						endif;
@@ -63,35 +64,18 @@
 			<div class="information">
 				<h2>BLOG</h2>
 				<dl>
-					<dt>2020-08-04</dt>
-					<dd>
-						<div class="b_img">
-							<?php the_post_thumbnail('thumbside'); ?>
-						</div>
-						<div class="b_right">
-							<a href="<?php echo home_url(); ?>/sample.html">社長通信</a>
-						</div>
-					</dd>
-
-					<dt>2020-08-02</dt>
-					<dd>
-						<div class="b_img">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/sample.jpg">
-						</div>
-						<div class="b_right">
-						<a href="<?php echo home_url(); ?>/sample.html">社員紹介</a>
+					<?php
+						$infoPosts = get_posts('numberposts=4&category=3'); 
+						foreach($infoPosts as $post):
+					?>
+						<dt><?php the_time('Y-m-d'); ?></dt>
+						<dd>
+							<div class="b_img"><?php the_post_thumbnail('thumbside'); ?></div>
+							<div class="b_right">
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</div>
-					</dd>
-
-					<dt>2020-08-01</dt>
-					<dd>
-						<div class="b_img">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/sample.jpg">
-						</div>
-						<div class="b_right">
-							<a href="<?php echo home_url(); ?>/sample.html">セミナー開催報告</a>
-						</div>
-					</dd>
+						</dd>
+					<?php endforeach;  ?>
 					
 				</dl>
 			</div>
@@ -99,4 +83,4 @@
 		<?php get_sidebar(); ?> 
 	</div>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

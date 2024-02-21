@@ -8,5 +8,7 @@ register_nav_menus(
 	'place_footer' => 'フッター',
 	)
 );
-
+// サムネイル画像
+add_theme_support('post-thumbnails');
+add_image_size('thumbside', 85, 85, true);
 ?>
