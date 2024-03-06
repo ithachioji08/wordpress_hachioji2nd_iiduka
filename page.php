@@ -17,9 +17,5 @@
 			<?php get_sidebar(); ?>
         </div>
     </div>
-    <div id="pageTop">
-        <a href="#">PAGE TOP</a>
-    </div>
 </body>
 </html>
-<?php get_footer(); ?>

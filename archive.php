@@ -10,31 +10,13 @@
 	<div id="contents">
 		<div id="cont_left">
 			<div class="information">
-				<h2>Blog</h2>
-				<dl>
-					<?php
-						$infoPosts = get_posts('numberposts=4&category=3'); 
-						foreach($infoPosts as $post):
-					?>
-						<dt><?php the_time('Y-m-d'); ?></dt>
-						<dd>
-							<div class="b_img"><?php the_post_thumbnail('thumbside'); ?></div>
-							<div class="b_right">
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</div>
-						</dd>
-					<?php endforeach;  ?>
-					
-				</dl>
-			</div>
-			<div class="information">
 				<h2>INFORMATION</h2>
 				<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 					$the_query = new WP_Query( array(
 						'post_status' => 'publish',
 						'post_type' => 'post', //ページの種類（例、page、post、カスタム投稿タイプ）
 						'paged' => $paged,
-						'posts_per_page' => 5, // 表示件数
+						'posts_per_page' => 4, // 表示件数
 						'orderby'     => 'date',
 						'order' => 'DESC',
 						'cat' => 1

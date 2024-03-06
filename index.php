@@ -56,7 +56,7 @@
 						else:
 							echo '<div><p>ありません。</p></div>';
 						endif;
-						wp_pagenavi();
+				
 					?>	
 				</dl>
 				
@@ -65,7 +65,7 @@
 				<h2>BLOG</h2>
 				<dl>
 					<?php
-						$infoPosts = get_posts('numberposts=4&category=3'); 
+						$infoPosts = get_posts('numberposts=4&category=9'); 
 						foreach($infoPosts as $post):
 					?>
 						<dt><?php the_time('Y-m-d'); ?></dt>
