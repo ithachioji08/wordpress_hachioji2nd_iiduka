@@ -14,15 +14,15 @@
 		<div class="top-nav">
 			<div class="top-navColumn top-navColumn_left">
 				<h2>SERVICE</h2>
-				<div class="top-navPhoto"><a href="<?php echo home_url(); ?>/service.html"><img src="<?php echo get_template_directory_uri(); ?>/images/photo02.jpg" alt="" width="460" /></a></div>
+				<div class="top-navPhoto"><a href="<?php echo home_url(); ?>/service"><img src="<?php echo get_template_directory_uri(); ?>/images/photo02.jpg" alt="" width="460" /></a></div>
 				<p>弊社のサービスをご紹介します。</p>
-				<p class="top-navDetail"><a href="<?php echo home_url(); ?>/service.html">MORE</a></p>
+				<p class="top-navDetail"><a href="<?php echo home_url(); ?>/service">MORE</a></p>
 			</div>
 			<div class="top-navColumn top-navColumn_right">
 				<h2>COMPANY</h2>
-				<div class="top-navPhoto"><a href="<?php echo home_url(); ?>/company.html"><img src="<?php echo get_template_directory_uri(); ?>/images/photo03.jpg" alt=""  width="460" /></a></div>
+				<div class="top-navPhoto"><a href="<?php echo home_url(); ?>/company"><img src="<?php echo get_template_directory_uri(); ?>/images/photo03.jpg" alt=""  width="460" /></a></div>
 				<p>会社情報をご紹介します。</p>
-				<p class="top-navDetail"><a href="<?php echo home_url(); ?>/company.html">MORE</a></p>
+				<p class="top-navDetail"><a href="<?php echo home_url(); ?>/company">MORE</a></p>
 			</div>
 		</div>
 		<div id="cont_left">
